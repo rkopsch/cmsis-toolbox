@@ -247,7 +247,7 @@ In CI systems that run a matrix build it is sometimes required to add a top-leve
 
 ```bash
 cbuild example.csolution.yml --toolchain AC6 --output outAC6
-cbuild example.csolution.yml --toolchain GCC --output outAC6
+cbuild example.csolution.yml --toolchain GCC --output outGCC
 ```
 
 ### Direct CMake Interface
