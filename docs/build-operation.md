@@ -69,7 +69,7 @@ It generates the application program that is described with the `<name>.csolutio
 The `cbuild setup` command prepares the data for an IDE environment. This command is called at start of an IDE or whenever a *csolution project* file is modified. The typical invocation is:
 
 ```bash
-cbuild setup <name>.csolution.yml [--packs] [--context-set] [--update-rte] [--frozen-packs]
+cbuild setup <name>.csolution.yml --context-set [--packs] [--update-rte] [--frozen-packs]
 ```
 
 Typical IDE environments use a `--context-set` that specifies the [context](build-overview.md#context) configuration of the application. For the application program that is described with the `<name>.csolution.yml` project these steps are executed:
@@ -81,8 +81,8 @@ Typical IDE environments use a `--context-set` that specifies the [context](buil
 
 The operation is further controlled by options: 
 
-- The option `--packs` downloads missing software packs.
 - The option `--context-set` restricts the operation to the [`context-set`](build-overview.md#working-with-context-set) selected by the file [`<name>.cbuild-set.yml`](YML-CBuild-Format.md#cbuild-output-files). If this file is missing a file `<name>.cbuild-set.yml` with selection of the first `target-type`, the first `build-type`, and first `project`  that is specified in the file `<name>.csolution.yml` is created. 
+- The option `--packs` downloads missing software packs.
 - The option [`--update-rte`](build-overview.md#rte-directory-structure) updates the configuration files of the application.
 - With the option `--frozen-packs` the file `*.cbuild-pack.yml` is used as input. An error is issued when a pack version changes.
 - The option `--toolchain` can be used to explicitly select a compiler.
